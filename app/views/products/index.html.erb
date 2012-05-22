@@ -1,0 +1,15 @@
+<h1>List of Products</h1>
+
+<%= link_to "Add a new product", product_new_url %>
+<br>
+<%= link_to "Sign up for an account", user_new_url %>
+
+<ul>
+<% @products.each do |x| %>
+	<li>
+		<a href = '<%= brand_url(x.brand) %>'><%= x.brand.name %></a>	
+		<a href = '<%= product_url(x) %>'><%= x.name %></a>	
+		<%= x.price %>
+	</li>
+<% end %>
+</ul>
